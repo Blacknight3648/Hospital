@@ -38,6 +38,7 @@ public class Audit {
      */
     @PreUpdate
     public void preUpdate() {
+
         this.updatedAt = LocalDateTime.now();
     }
 }

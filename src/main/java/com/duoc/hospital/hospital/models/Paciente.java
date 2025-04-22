@@ -57,7 +57,7 @@ public class Paciente {
 
     @Column(unique = true, nullable = false)
     @NotBlank(message = "El campo rut no puede ser vacio")
-    @Pattern(regexp = "\\d{1,8}-[\\dKk]", message = "El fomato del dni debe ser XXXXXXXX-X")
+    @Pattern(regexp = "\\d{1,8}-[\\dKk]", message = "El fomato del dni debe ser XXXXXXXX-X") // \\d{1,8} un digito en un rango de 1 a 8 numeros,  - [\\dKk] un digito o una K mayuscula o minuscula
     private String run;
 
     @Column(nullable = false)
