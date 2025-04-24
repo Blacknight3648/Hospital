@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Entity -> Nos permite definir que esta tabla estará almacenada en la BD que se declara en el properties
@@ -81,5 +83,8 @@ public class Paciente {
     // Si bien en postmant no aparecerá como si fuera una estructura anidada estos pertenecran a la misma tabla
     @Embedded
     private Audit audit = new Audit();
+
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Atencion> atenciones = new ArrayList<>();
 
 }
